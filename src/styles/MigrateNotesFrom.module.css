@@ -1,0 +1,66 @@
+.formContainer {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Ensures proper spacing between checkbox and label */
+  margin-bottom: 5px; /* Reduces excess spacing */
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff; /* Matches the button color */
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 16px;
+  color: #333; /* Darker color for better readability */
+  cursor: pointer;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}

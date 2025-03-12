@@ -1,0 +1,173 @@
+/* Card Container */
+.folderCard {
+  padding: 20px;
+  border-radius: 15px;
+  width: 240px;
+  height: 250px;
+  background: url("../assets/Union.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Folder Tab Shape */
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 180px;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.dropdownMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownMenu li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdownMenu li:hover {
+  background: #f4f4f4;
+}
+
+.dropdownMenu .delete {
+  color: red;
+}
+
+/* Folder Tab */
+.folderTab {
+  position: absolute;
+  top: 20px;
+  left: 230px;
+  width: 30px;
+  height: 30px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  background-color: #333;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* More Options Button */
+.moreButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border: 50%;
+}
+
+/* Visibility Tag */
+.visibilityTag {
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+/* Visibility Colors */
+.ограниченный {
+  background: lightgreen;
+  border: 1px solid #0b7200;
+  color: #0b7200;
+}
+
+.публичный {
+  background: lightblue;
+  border: 1px solid #0057f8;
+  color: #0057f8;
+}
+
+.приватный {
+  background: lightcoral;
+  color: #a30000;
+  border: 1px solid #a30000;
+}
+
+/* Folder Title */
+.folderTitle {
+  margin-top: 70px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Notes Section */
+.notesSection {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.notesSection p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Add Note Button */
+.addNoteButton {
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Plus Icon */
+.plusIcon {
+  color: white;
+  background: #3f4246;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* Tags Section */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.tag {
+  background: #eee;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: #555;
+}
+
+/* Empty Content Area */
+.emptyContent {
+  background: #fff;
+  height: 130px;
+  border-radius: 5px;
+  margin-top: 10px;
+}

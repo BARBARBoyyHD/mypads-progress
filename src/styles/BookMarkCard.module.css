@@ -1,0 +1,120 @@
+.card {
+  border-radius: 12px;
+  padding: 15px;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  background: url("../assets/Union.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.moreButton {
+  background-color: #3f4246;
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 32px; /* Ensure square shape */
+  height: 32px; /* Ensure square shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreIcon {
+  font-size: 18px;
+  color: #f4f4f4;
+}
+
+.status {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.public {
+  background: #e0e7ff;
+  color: #3b82f6;
+}
+
+.private {
+  background: #ffe4e6;
+  color: #e11d48;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.notesCount {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.tag {
+  font-size: 12px;
+  background: #f1f5f9;
+  color: #4b5563;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin: 3px;
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  width: 180px;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.dropdownMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownMenu li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdownMenu li:hover {
+  background: #f4f4f4;
+}
+
+.delete {
+  color: red;
+}

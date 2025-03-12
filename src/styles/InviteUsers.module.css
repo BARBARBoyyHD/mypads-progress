@@ -1,0 +1,76 @@
+.inviteContainer {
+  background: #FAFAFA;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+}
+
+h3,
+h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.inputContainer {
+  display: flex;
+  border: 1px solid #ECECEC;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.inputContainer input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.inputContainer button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #ECECEC;
+  cursor: pointer;
+}
+
+.selectedUsers {
+  margin-top: 15px;
+}
+
+/* Flex row for email list */
+.emailList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows wrapping */
+  gap: 8px;
+}
+
+.emailChip {
+  background: #ECECEC;
+  padding: 8px 12px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.emailChip span {
+  margin-left: 8px;
+  cursor: pointer;
+  color: red;
+}
+
+.saveButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #2d74da;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.saveButton:hover {
+  background-color: #1b56b0;
+}

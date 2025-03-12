@@ -1,0 +1,126 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.breadcrumb {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.formContainer {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer h3 {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px; /* ✅ Consistent padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* ✅ Readability improvement */
+  box-sizing: border-box; /* ✅ Prevents overflow */
+}
+
+/* ✅ Improved Input Styling for Tags */
+.tagsInput {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tagsInput input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 50px; /* ✅ Leaves space for "Ok" button */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* ✅ Readability */
+  box-sizing: border-box; /* ✅ Prevents overflow */
+}
+
+/* ✅ "Ok" button inside the input field */
+.okButton {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  color: #3F4246;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.tag {
+  background: #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.addButton {
+  width: 100%;
+  background: royalblue;
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* ✅ Ensures center alignment */
+  align-items: center; /* ✅ Centers everything vertically */
+  border-radius: 5px;
+  margin-top: 15px;
+  gap: 10px;
+  cursor: pointer;
+  border: none; /* Optional: Removes default button border */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  color: #0057f8;
+  margin-bottom: 0; /* ✅ Fixes misalignment */
+}
