@@ -5,12 +5,31 @@ import styles from "../../styles/SingleFolder.module.css";
 import NewNoteButton from "../button/NewNoteButton";
 import { FaPlus, FaCog, FaStar, FaTrash } from "react-icons/fa";
 
-const FolderSingle = () => {
-  const { id } = useParams();
-  const folderId = parseInt(id, 10);
-  const folder = folders.find((f) => f.id === folderId);
+// Define types
+interface File {
+  name: string;
+}
+
+interface Admin {
+  name: string;
+  email: string;
+}
+
+interface Folder {
+  id: number;
+  title: string;
+  files: File[];
+  tags?: string[];
+  admins?: Admin[];
+}
+
+// Component
+const FolderSingle: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const folderId = parseInt(id || "0", 10);
+  const folder: Folder | undefined = folders.find((f) => f.id === folderId);
   const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,14 +47,14 @@ const FolderSingle = () => {
     };
   }, []);
 
+  // If folder is not found
   if (!folder) {
     return <div className={styles.error}>Папка не найдена</div>;
   }
-  // /folder/settings/${id}
+
+  // Navigation functions
   const editFolder = () => navigate(`/folder/settings/${id}`);
-  // /move/notes/${id}
   const moveNotes = () => navigate(`/move/notes`);
-  // /admin/setting/${id}
   const adminSettings = () => navigate(`/admin/setting`);
 
   const toggleDropdown = (index: number) => {

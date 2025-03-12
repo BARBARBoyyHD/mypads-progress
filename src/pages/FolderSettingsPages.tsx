@@ -1,11 +1,10 @@
-import React from "react";
 import { useParams } from "react-router-dom";
-import Header from "../components/header/Header";
 import FolderSettingsForm from "../components/Folder/FolderSettingsForm";
 import { folders } from "../components/data/FolderData"; // Import folders data
+import Header from "../components/header/Header";
 
 const FolderSettingsPage = () => {
-  const { id } = useParams<{ id: number }>(); // Get folder ID from URL
+  const { id } = useParams<{ id: string }>(); // Get folder ID from URL
   const folder = folders.find((folder) => folder.id === Number(id)); // Find folder by ID
 
   if (!folder) {

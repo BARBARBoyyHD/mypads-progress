@@ -10,11 +10,25 @@ import {
 import { IoSettings } from "react-icons/io5";
 import styles from "../../styles/BookmarkCard.module.css";
 
-const BookmarkCard = ({ id, title, isPublic, notesCount, tags }) => {
+interface Bookmark {
+  id: number;
+  title: string;
+  isPublic: boolean;
+  notesCount: number;
+  tags: string[];
+}
+
+const BookmarkCard: React.FC<Bookmark> = ({
+  id,
+  title,
+  isPublic,
+  notesCount,
+  tags,
+}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const toggleDropdown = (e) => {
+  const toggleDropdown = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setDropdownOpen(!dropdownOpen);
   };
@@ -39,7 +53,7 @@ const BookmarkCard = ({ id, title, isPublic, notesCount, tags }) => {
           <div className={styles.dropdownMenu} ref={dropdownRef}>
             <ul>
               <li>
-                <Link to={`/folder/settings/${id}`} className={styles.menuItem}>
+                <Link to={`/folder/settings/${id}`} style={{textDecoration:"none",color:"inherit"}} className={styles.menuItem}>
                   <IoSettings /> Настройки
                 </Link>
               </li>

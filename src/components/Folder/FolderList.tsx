@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import React Router navigation
 import FolderCard from "./FolderCard";
 import styles from "../../styles/FolderList.module.css";
-import folders from "../data/FolderData"; // ✅ Fix import: FolderData → folders
+import folders from "../data/FolderData"; // ✅ Import folder data
 
-const FolderList = () => {
+
+
+const FolderList: React.FC = () => {
   const navigate = useNavigate(); // Initialize navigation function
 
   useEffect(() => {
-    console.log(folders); // ✅ Corrected variable name
+    console.log(folders); // ✅ Debugging: Check folder data in console
   }, []);
 
   // Handle folder click
@@ -21,8 +23,8 @@ const FolderList = () => {
       {folders.map((folder) => (
         <FolderCard
           key={folder.id}
-          {...folder}
-          onClick={() => handleFolderClick(folder.id)}
+          {...folder} 
+          // Pass folder properties as props
         />
       ))}
     </div>

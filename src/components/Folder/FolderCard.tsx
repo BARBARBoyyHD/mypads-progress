@@ -3,24 +3,32 @@ import styles from "../../styles/FolderCard.module.css";
 import { FiMoreHorizontal, FiPlus } from "react-icons/fi";
 import { FaCog, FaShareAlt, FaUserShield, FaStar, FaTrash } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
-
 import { Link, useNavigate } from "react-router-dom";
 
-const FolderCard = ({ id, title, notesCount, tags, visibility }) => {
+// Define an interface for FolderCard props
+interface FolderCardProps {
+  id: number;
+  title: string;
+  notesCount: number;
+  tags: string[];
+  visibility: string;
+}
+
+const FolderCard: React.FC<FolderCardProps> = ({ id, title, notesCount, tags, visibility }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const navigate = useNavigate(); // Hook for programmatic navigation
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   // Toggle dropdown
-  const toggleDropdown = (event) => {
-    event.stopPropagation(); // Prevent folder click from triggering navigation
+  const toggleDropdown = (event: React.MouseEvent) => {
+    event.stopPropagation();
     setDropdownOpen(!dropdownOpen);
   };
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setDropdownOpen(false);
       }
     }
@@ -36,19 +44,17 @@ const FolderCard = ({ id, title, notesCount, tags, visibility }) => {
   };
 
   return (
-    <div className={styles.folderCard} style={{cursor: "pointer"}} onClick={handleFolderClick}>
-      {/* Folder Tab with More Options */}
+    <div className={styles.folderCard} style={{ cursor: "pointer" }} onClick={handleFolderClick}>
       <div className={styles.folderTab}>
         <button className={styles.moreButton} onClick={toggleDropdown}>
           <FiMoreHorizontal style={{ color: "white" }} />
         </button>
 
-        {/* Dropdown Menu */}
         {dropdownOpen && (
           <div className={styles.dropdownMenu} ref={dropdownRef}>
             <ul>
               <li>
-                <Link to={`/folder/settings/${id}`} style={{ color: "inherit" , textDecoration: "none" }} onClick={(e) => e.stopPropagation()}>
+                <Link to={`/folder/settings/${id}`} style={{ color: "inherit", textDecoration: "none" }} onClick={(e) => e.stopPropagation()}>
                   <IoSettings /> Настройки
                 </Link>
               </li>
@@ -72,28 +78,20 @@ const FolderCard = ({ id, title, notesCount, tags, visibility }) => {
         )}
       </div>
 
-      {/* Visibility Tag */}
-      <span className={`${styles.visibilityTag} ${styles[visibility]}`}>
-        {visibility}
-      </span>
+      <span className={`${styles.visibilityTag} ${styles[visibility]}`}>{visibility}</span>
 
-      {/* Folder Title & Notes Section */}
       <div className={styles.content}>
         <h3 className={styles.folderTitle}>{title}</h3>
         <div className={styles.notesSection}>
           <p>
             Заметки: <strong>{notesCount}</strong>
           </p>
-          <button
-            className={styles.addNoteButton}
-            onClick={(e) => e.stopPropagation()} // Prevent navigation when clicking "+"
-          >
+          <button className={styles.addNoteButton} onClick={(e) => e.stopPropagation()}>
             <FiPlus className={styles.plusIcon} />
           </button>
         </div>
       </div>
 
-      {/* Tags Section */}
       <div className={styles.tags}>
         {tags.map((tag, index) => (
           <span key={index} className={styles.tag}>
@@ -102,7 +100,6 @@ const FolderCard = ({ id, title, notesCount, tags, visibility }) => {
         ))}
       </div>
 
-      {/* Empty Content Area */}
       <div className={styles.emptyContent}></div>
     </div>
   );

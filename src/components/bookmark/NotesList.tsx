@@ -1,8 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../../styles/NotesList.module.css";
-import { FaCog, FaStar, FaTrash,FaEllipsisH } from "react-icons/fa";
+import { FaCog, FaStar, FaTrash, FaEllipsisH } from "react-icons/fa";
 
-const NotesList = ({ notes, tags }) => {
+// Define interface for a single note
+interface Note {
+  id: number;
+  title: string;
+  tags: string[];
+}
+
+// Define props interface
+interface NotesListProps {
+  notes: Note[];
+}
+
+const NotesList: React.FC<NotesListProps> = ({ notes }) => {
   const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -28,8 +40,8 @@ const NotesList = ({ notes, tags }) => {
   return (
     <div className={styles.notesContainer}>
       {notes.length > 0 ? (
-        notes.map((file, index) => (
-          <div key={index} className={styles.noteCard}>
+        notes.map((note, index) => (
+          <div key={note.id} className={styles.noteCard}>
             <div className={styles.noteHeader}>
               <span className={styles.noteIcon}>📘</span>
               <div className={styles.dropdownContainer}>
@@ -37,7 +49,7 @@ const NotesList = ({ notes, tags }) => {
                   onClick={() => toggleDropdown(index)}
                   className={styles.moreButton}
                 >
-                  <FaEllipsisH/>
+                  <FaEllipsisH />
                 </button>
                 {dropdownOpen === index && (
                   <div ref={dropdownRef} className={styles.dropdownMenu}>
@@ -54,9 +66,9 @@ const NotesList = ({ notes, tags }) => {
                 )}
               </div>
             </div>
-            <h3 className={styles.noteTitle}>{file.name}</h3>
+            <h3 className={styles.noteTitle}>{note.title}</h3>
             <div className={styles.tags}>
-              {tags?.map((tag, i) => (
+              {note.tags.map((tag, i) => (
                 <span key={i} className={styles.tag}>
                   {tag}
                 </span>
