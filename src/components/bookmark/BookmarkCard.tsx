@@ -8,7 +8,7 @@ import {
   FaTrash,
 } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
-import styles from "../../styles/BookmarkCard.module.css";
+import styles from "../../styles/BookMarkCard.module.css";
 
 interface Bookmark {
   id: number;
