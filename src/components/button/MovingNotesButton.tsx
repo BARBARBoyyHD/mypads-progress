@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "../../styles/MovingNotesButton.module.css";
 import { useNavigate } from "react-router-dom";
+import styles from "../../styles/MovingNotesButton.module.css";
 const MovingNotesButton = () => {
   const navigate = useNavigate();
   const handleMigrate = () => {

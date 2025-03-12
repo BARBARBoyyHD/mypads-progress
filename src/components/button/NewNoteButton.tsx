@@ -1,4 +1,3 @@
-import React from "react";
 import { FiPlus } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import styles from "../../styles/AddNotesButton.module.css";

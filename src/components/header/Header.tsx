@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../../styles/header.module.css";
 import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 import { FaStar, FaFolderMinus } from "react-icons/fa6";

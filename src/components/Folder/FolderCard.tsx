@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../../styles/FolderCard.module.css";
 import { FiMoreHorizontal, FiPlus } from "react-icons/fi";
-import { FaCog, FaShareAlt, FaUserShield, FaStar, FaTrash } from "react-icons/fa";
+import {  FaShareAlt, FaUserShield, FaStar, FaTrash } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 

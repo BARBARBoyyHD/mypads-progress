@@ -22,7 +22,7 @@ const FolderSettingsForm: React.FC<FolderSettingsFormProps> = ({ folder }) => {
   const [visibility, setVisibility] = useState<Folder["visibility"]>(
     folder.visibility
   );
-  const [password, setPassword] = useState(""); // Empty string instead of '********'
+  // const [password, setPassword] = useState(""); // Empty string instead of '********'
   const [readOnly, setReadOnly] = useState(false);
   const [tags, setTags] = useState<string[]>(folder.tags || []);
 
