@@ -86,7 +86,6 @@ const FolderSettingsForm: React.FC<FolderSettingsFormProps> = ({ folder }) => {
             <input
               type="password"
               className={styles.input}
-              value={password}
               readOnly
             />
           </>
