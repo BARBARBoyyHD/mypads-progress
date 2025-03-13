@@ -103,6 +103,7 @@ const BookmarkCard: React.FC<Bookmark> = ({
           </span>
         ))}
       </div>
+      <div className={styles.emptyContent}></div>
     </div>
   );
 };

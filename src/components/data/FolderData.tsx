@@ -63,6 +63,75 @@ export const folders: Folder[] = [
     ],
     files: [],
   },
+  {
+    id: 5,
+    title: "Папка4",
+    description: "Проектные файлы",
+    notesCount: 2,
+    tags: ["Теги", "Теги", "Теги"],
+    visibility: "приватный",
+    lastModified: "2024-03-05",
+    admins: [
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+    ],
+    files: [],
+  },
+  {
+    id: 6,
+    title: "Папка3",
+    description: "Проектные файлы",
+    notesCount: 2,
+    tags: ["Теги", "Теги", "Теги"],
+    visibility: "приватный",
+    lastModified: "2024-03-05",
+    admins: [
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+    ],
+    files: [
+      { name: "Проект 1", type: "docx", size: "25KB" },
+      { name: "Проект 2", type: "xlsx", size: "40KB" },
+    ],
+  },
+  {
+    id: 7,
+    title: "Папка3",
+    description: "Проектные файлы",
+    notesCount: 2,
+    tags: ["Теги", "Теги", "Теги"],
+    visibility: "приватный",
+    lastModified: "2024-03-05",
+    admins: [
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+    ],
+    files: [
+      { name: "Проект 1", type: "docx", size: "25KB" },
+      { name: "Проект 2", type: "xlsx", size: "40KB" },
+    ],
+  },
+  {
+    id: 8,
+    title: "Папка3",
+    description: "Проектные файлы",
+    notesCount: 2,
+    tags: ["Теги", "Теги", "Теги"],
+    visibility: "приватный",
+    lastModified: "2024-03-05",
+    admins: [
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+      { name: "Tester", email: "text@example.mail.ru" },
+    ],
+    files: [
+      { name: "Проект 1", type: "docx", size: "25KB" },
+      { name: "Проект 2", type: "xlsx", size: "40KB" },
+    ],
+  },
 ];
 
 export default folders;

@@ -1,31 +1,61 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.addButton {
+  background: royalblue;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  border: none;
+}
+.button {
+  background: #2d69e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  gap: 10px; /* Reduce gap if needed */
+  padding: 20px 15px; /* Reduce padding to make it thinner */
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.plusIcon {
+  color: #ffffff;
+  font-weight: bold;
+}
+.button:hover {
+  background: darkblue;
+}
+.wrapNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width:768px) {
+  .wrapNav {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
   }
-  
-  .container h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .addButton {
-    background: royalblue;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .addButton:hover {
-    background: darkblue;
-  }
-  
+}

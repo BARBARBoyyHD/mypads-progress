@@ -8,8 +8,8 @@ const AddFolderForm: React.FC = () => {
   const [visibility, setVisibility] = useState<string>("Ограниченная");
   const [tags, setTags] = useState<string[]>([]);
   const [newTag, setNewTag] = useState<string>("");
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const handleAddTag = (): void => {
     if (newTag.trim() !== "") {
       setTags([...tags, newTag.trim()]);
@@ -20,18 +20,23 @@ const AddFolderForm: React.FC = () => {
     setTags(tags.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = ()=>{
-    navigate("/all/my/folders")
-  }
+  const handleSubmit = () => {
+    navigate("/all/my/folders");
+  };
 
   return (
     <div className={styles.container}>
       <nav className={styles.breadcrumb}>
-        <Link style={{ textDecoration: "none" , color:"inherit"}} to={"/"}>
-          <span>Мои папки / </span>
-        </Link>
+        <h1>
+          <Link style={{ textDecoration: "none", color: "inherit" }} to={"/"}>
+            <span>Мои папки / </span>
+          </Link>
+        </h1>
 
-        <strong style={{color:"#3F4246"}}>Добавить новую папку</strong>
+        <h1>
+          {" "}
+          <strong style={{ color: "#3F4246" }}>Добавить новую папку</strong>
+        </h1>
       </nav>
 
       <div className={styles.formContainer}>

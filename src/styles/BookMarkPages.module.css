@@ -1,15 +1,24 @@
-
+.folderWrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
 
 @media (max-width: 768px) {
   .bookMarkSection {
-    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .notesSection{
-    padding: 24px;
+  .folderWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .notesSection {
     display: flex;
     flex-direction: column;
     justify-content: center;

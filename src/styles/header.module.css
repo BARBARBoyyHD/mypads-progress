@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
   box-sizing: border-box;
   position: relative;
 }
@@ -15,10 +14,8 @@
 
 .navContainer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  margin-left: 20px;
 }
 
 .nav {
@@ -31,9 +28,8 @@
 .wrapButton {
   display: flex;
   justify-content: center;
-  width: 100%;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .button {
@@ -67,7 +63,6 @@
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 5px 10px;
 }
 
 .searchIcon {
@@ -104,9 +99,7 @@
 
 .logoWrap {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  width: 13.2%;
 }
 
 /* Hamburger menu styles */
@@ -186,4 +179,5 @@
     width: 30px;
     height: 30px;
   }
+  
 }

@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiSolidSearch } from "react-icons/bi";
 import { BsFilterLeft } from "react-icons/bs";
 import { FaFolderMinus, FaStar } from "react-icons/fa6";
@@ -13,32 +11,47 @@ import styles from "../../styles/header.module.css";
 export default function Header() {
   const [activeButton, setActiveButton] = useState<string>("folders");
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [logoVisible, setLogoVisible] = useState<boolean>(false);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+  const handleToggleMenu = () => {
+    setMobileMenuOpen((prev) => !prev);
   };
+
+  const handleLogoVisible = () => {
+    setLogoVisible(window.innerWidth < 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleLogoVisible);
+    handleLogoVisible;
+    return () => {
+      window.removeEventListener("resize", handleLogoVisible);
+    };
+  }, []);
 
   return (
     <header className={styles.header}>
-      <div className={styles.logoWrap}>
-        <Link
-          to={"/"}
-          style={{
-            textDecoration: "none",
-            color: "inherit",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "8px",
-          }}
-        >
-          <BsFilterLeft size={10} className={styles.icon} />
-          <h1 className={styles.logo}>MyPads</h1>
-        </Link>
-      </div>
+      {logoVisible && (
+        <div className={styles.logoWrap}>
+          <Link
+            to={"/"}
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <BsFilterLeft size={10} className={styles.icon} />
+            <h1 className={styles.logo}>MyPads</h1>
+          </Link>
+        </div>
+      )}
 
       {/* Hamburger menu icon for mobile */}
-      <div className={styles.hamburger} onClick={toggleMobileMenu}>
+      <div className={styles.hamburger} onClick={handleToggleMenu}>
         {mobileMenuOpen ? <RiCloseLine size={24} /> : <RiMenu3Line size={24} />}
       </div>
 
@@ -48,6 +61,22 @@ export default function Header() {
           mobileMenuOpen ? styles.mobileMenuOpen : ""
         }`}
       >
+        <div className={styles.logoWrap}>
+          <Link
+            to={"/"}
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <BsFilterLeft size={10} className={styles.icon} />
+            <h1 className={styles.logo}>MyPads</h1>
+          </Link>
+        </div>
         <div className={styles.wrapButton}>
           <button
             className={`${styles.button} ${
@@ -97,13 +126,19 @@ export default function Header() {
             </Link>
           </button>
         </div>
-
-        {/* SEARCH BAR WITH ICON */}
         <nav className={styles.nav}>
           <div className={styles.searchContainer}>
             <BiSolidSearch className={styles.searchIcon} />
             <input type="text" placeholder="Поиск" className={styles.search} />
-            <button style={{border:"none",justifyContent:"center",alignItems:"center",background:"transparent",cursor:"pointer"}}>
+            <button
+              style={{
+                border: "none",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "transparent",
+                cursor: "pointer",
+              }}
+            >
               <VscSettings />
             </button>
           </div>
