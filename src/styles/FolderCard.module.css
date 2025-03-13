@@ -12,6 +12,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   transition: transform 0.3s ease-in-out;
+}
+
+.folderCard:hover{
+  transform: translateY(-5px);
 }
 
 /* Folder Tab Shape */
@@ -90,19 +95,19 @@
 
 /* Visibility Colors */
 .ограниченный {
-  background: lightgreen;
+  background: #c2e5c2;
   border: 1px solid #0b7200;
   color: #0b7200;
 }
 
 .публичный {
-  background: lightblue;
+  background: #c7e0e9;
   border: 1px solid #0057f8;
   color: #0057f8;
 }
 
 .приватный {
-  background: lightcoral;
+  background: #fcd5d5;
   color: #a30000;
   border: 1px solid #a30000;
 }

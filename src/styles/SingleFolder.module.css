@@ -4,6 +4,12 @@
   font-family: "Arial", sans-serif;
 }
 
+.wrapFile{
+  transition: transform 0.3s ease-in-out;
+}
+.wrapFile{
+  transform: translateY(-5px);
+}
 /* Breadcrumb styles */
 .breadcrumbs {
   font-size: 18px;
@@ -21,6 +27,10 @@
   display: flex;
   gap: 15px;
   margin-top: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+.folderContainer:hover{
+  transform: translateY(-5px);
 }
 
 /* Note card styles */
@@ -146,6 +156,8 @@
 
 /* Configuration section */
 .configurations {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
   background: white;
   padding: 10px;
@@ -159,9 +171,11 @@
   background: #f5f5f5;
   border: none;
   border-radius: 5px;
+  width: 250px;
   cursor: pointer;
   font-size: 14px;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 5px;
 }
@@ -181,7 +195,7 @@
 .deleteButton,
 .unsubscribeButton {
   padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
   border: none;
@@ -191,26 +205,31 @@
 }
 
 .shareButton {
-  background: #007bff;
-  color: white;
+  background: #f5f5f5;
+  color: #0056b3;
+  border: 1px solid #0056b3;
 }
 
 .shareButton:hover {
   background: #0056b3;
+  color: #f5f5f5;
 }
 
 .deleteButton {
-  background: #ff4d4d;
-  color: white;
+  background: #f5f5f5;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d ;
 }
 
 .deleteButton:hover {
   background: #cc0000;
+  color: #f5f5f5;
 }
 
 .unsubscribeButton {
-  background: #ffae42;
-  color: white;
+  background: #f5f5f5;
+  color: #ffae42;
+  border: 1px solid #ffae42 ;
 }
 
 .unsubscribeButton:hover {

@@ -6,10 +6,6 @@ import FolderCard from "./FolderCard";
 
 
 const FolderList: React.FC = () => {
-  useEffect(() => {
-    console.log(folders); // ✅ Debugging: Check folder data in console
-  }, []);
-
   // Handle folder click
 
   return (

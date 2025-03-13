@@ -3,6 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import folders from "../data/FolderData";
 import styles from "../../styles/SingleFolder.module.css";
 import NewNoteButton from "../button/NewNoteButton";
+import Upload from "../../assets/Upload.png"
+import Delete from "../../assets/Delete.png"
+import Ticket from "../../assets/Ticket.png"
+import Vector from "../../assets/Vector.png"
+import { AiOutlineSwap } from "react-icons/ai";
+import { IoSettings } from "react-icons/io5";
 import { FaPlus, FaCog, FaStar, FaTrash } from "react-icons/fa";
 
 // Define types
@@ -72,12 +78,12 @@ const FolderSingle: React.FC = () => {
         {/* Top Buttons */}
         <div className={styles.topButtons}>
           {folder.files.length > 0 && (
-            <button className={styles.shareButton}>🔗 Поделиться</button>
+            <button className={styles.shareButton}><img src={Upload} alt="Upload Icon" className={styles.uploadIcon} /> Поделиться</button>
           )}
-          <button className={styles.deleteButton}>🗑 Удалить папку</button>
+          <button className={styles.deleteButton}><img src={Delete} alt="Delete Icon" className={styles.DeleteIcon} /> Удалить папку</button>
           {folder.files.length > 0 && (
             <button className={styles.unsubscribeButton}>
-              ⚠ Отписаться от папки
+             <img src={Ticket} alt="Ticket Icon" className={styles.TicketIcon} /> Отписаться от папки
             </button>
           )}
         </div>
@@ -91,7 +97,7 @@ const FolderSingle: React.FC = () => {
               folder.files.map((file, index) => (
                 <div key={index} className={styles.noteCard}>
                   <div className={styles.noteHeader}>
-                    <span className={styles.noteIcon}>📘</span>
+                    <span className={styles.noteIcon}><img src={Vector} alt="Delete vector" className={styles.vectorIcon} /></span>
                     <div className={styles.dropdownContainer}>
                       <button
                         onClick={() => toggleDropdown(index)}
@@ -114,13 +120,15 @@ const FolderSingle: React.FC = () => {
                       )}
                     </div>
                   </div>
-                  <h3 className={styles.noteTitle}>{file.name}</h3>
-                  <div className={styles.tags}>
-                    {folder.tags?.map((tag, i) => (
-                      <span key={i} className={styles.tag}>
-                        {tag}
-                      </span>
-                    ))}
+                  <div className={styles.wrapFile}>
+                    <h3 className={styles.noteTitle}>{file.name}</h3>
+                    <div className={styles.tags}>
+                      {folder.tags?.map((tag, i) => (
+                        <span key={i} className={styles.tag}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))
@@ -142,7 +150,7 @@ const FolderSingle: React.FC = () => {
           {/* Move Folder Button (Only show if there are notes) */}
           {folder.files.length > 0 && (
             <button onClick={moveNotes} className={styles.moveButton}>
-              📂 Переместить папку в другую папку
+               Переместить папку в другую папку<AiOutlineSwap/>
             </button>
           )}
         </div>
@@ -167,7 +175,7 @@ const FolderSingle: React.FC = () => {
           </div>
           <div className={styles.configurations}>
             <button onClick={editFolder} className={styles.configButton}>
-              ⚙ Конфигурации
+               Конфигурации <IoSettings/>
             </button>
           </div>
         </div>

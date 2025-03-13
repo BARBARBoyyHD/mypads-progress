@@ -1,4 +1,6 @@
 import React, { useState, useRef } from "react";
+import { FaPlus } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import {
   FaEllipsisH,
@@ -83,9 +85,14 @@ const BookmarkCard: React.FC<Bookmark> = ({
       {/* Folder Title & Notes */}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.notesCount}>
-          Заметки: <strong>{notesCount}</strong>
-        </p>
+        <div style={{display:"flex",gap:"8px"}}>
+          <p className={styles.notesCount}>
+            Заметки: <strong>{notesCount}</strong>
+          </p>
+          <button className={styles.plusIcon}>
+            <FaPlus style={{color:"#FAFAFA"}}/>
+          </button>
+        </div>
       </div>
 
       {/* Tags */}

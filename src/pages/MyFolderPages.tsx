@@ -1,14 +1,16 @@
 import React from "react";
-import Header from "../components/header/Header";
 import FolderList from "../components/Folder/FolderList";
-import styles from "../styles/MyFolderPages.module.css";
+import Header from "../components/header/Header";
 
 const MyFolderPages: React.FC = () => {
   return (
-    <main className={styles.container}>
+    <main>
       <Header />
-      <h1>Мои папки</h1>
-      <FolderList />
+
+      <section>
+        <h1 style={{padding:"10px"}}>Мои папки</h1>
+        <FolderList />
+      </section>
     </main>
   );
 };

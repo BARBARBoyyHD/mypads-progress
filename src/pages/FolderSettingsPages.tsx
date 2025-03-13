@@ -14,10 +14,13 @@ const FolderSettingsPage = () => {
   return (
     <main>
       <Header />
-      <h1 style={{fontSize:"24px",color:"#3F42464D"}}>
-        Мои папки / <span style={{color:"#3F4246"}}>Редактировать папку</span>
+      <h1 style={{ fontSize: "24px", color: "#3F42464D" }}>
+        Мои папки /{" "}
+        <span style={{ color: "#3F4246" }}>Редактировать папку</span>
       </h1>
-      <FolderSettingsForm folder={folder} />
+      <section>
+        <FolderSettingsForm folder={folder} />
+      </section>
     </main>
   );
 };

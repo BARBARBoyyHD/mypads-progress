@@ -48,57 +48,50 @@ const FolderSettingsForm: React.FC<FolderSettingsFormProps> = ({ folder }) => {
         <h2 className={styles.title}>Редактировать папку</h2>
 
         {/* Имя */}
-        <label className={styles.label}>Имя</label>
-        <input
-          type="text"
-          className={styles.input}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <div>
+          <label className={styles.label}>Имя</label>
+          <input
+            type="text"
+            className={styles.input}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        {/* Описание */}
-        <label className={styles.label}>Описание</label>
-        <input
-          type="text"
-          className={styles.input}
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+          {/* Описание */}
+          <label className={styles.label}>Описание</label>
+          <input
+            type="text"
+            className={styles.input}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
-        {/* Видимость */}
-        <label className={styles.label}>Видимость</label>
-        <select
-          className={styles.select}
-          value={visibility}
-          onChange={(e) =>
-            setVisibility(e.target.value as Folder["visibility"])
-          }
-        >
-          <option value="приватный">Приватный</option>
-          <option value="ограниченный">Ограниченный</option>
-          <option value="публичный">Публичный</option>
-        </select>
+          {/* Видимость */}
+          <label className={styles.label}>Видимость</label>
+          <select
+            className={styles.select}
+            value={visibility}
+            onChange={(e) =>
+              setVisibility(e.target.value as Folder["visibility"])
+            }
+          >
+            <option value="приватный">Приватный</option>
+            <option value="ограниченный">Ограниченный</option>
+            <option value="публичный">Публичный</option>
+          </select>
 
-        {/* Пароль (Only if not public) */}
-        {visibility !== "публичный" && (
-          <>
-            <label className={styles.label}>Пароль</label>
-            <input
-              type="password"
-              className={styles.input}
-              readOnly
-            />
-          </>
-        )}
+          {/* Пароль (Only if not public) */}
+          {visibility !== "публичный" && (
+            <>
+              <label className={styles.label}>Пароль</label>
+              <input type="password" className={styles.input} readOnly />
+            </>
+          )}
+        </div>
 
         {/* Только для чтения */}
-        <div className={styles.checkboxContainer}>
-          <input
-            type="checkbox"
-            id="readOnly"
-            checked={readOnly}
-            onChange={() => setReadOnly(!readOnly)}
-          />
+        <div style={{display:"flex",alignItems:"center"}}>
+          <input type="checkbox" />
           <label htmlFor="readOnly" className={styles.checkboxLabel}>
             Только для чтения
           </label>

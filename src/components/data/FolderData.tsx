@@ -16,7 +16,7 @@ export const folders: Folder[] = [
     files: [
       { name: "Заметка", type: "text", size: "12KB" },
       { name: "Заметка 2", type: "text", size: "15KB" },
-      { name: "Заметка 3", type: "text", size: "10KB" },
+      { name: "Заметка 3", type: "text", size: "10KB" }
     ],
   },
   {

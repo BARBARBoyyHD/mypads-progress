@@ -1,21 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import styles from "../../styles/header.module.css"
-import { HiMiniBars3BottomLeft } from "react-icons/hi2"
-import { FaStar, FaFolderMinus } from "react-icons/fa6"
-import { IoPowerOutline } from "react-icons/io5"
-import { BiSolidSearch } from "react-icons/bi"
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { BiSolidSearch } from "react-icons/bi";
+import { BsFilterLeft } from "react-icons/bs";
+import { FaFolderMinus, FaStar } from "react-icons/fa6";
+import { IoPowerOutline } from "react-icons/io5";
+import { RiCloseLine, RiMenu3Line } from "react-icons/ri";
+import { VscSettings } from "react-icons/vsc";
+import { Link } from "react-router-dom";
+import styles from "../../styles/header.module.css";
 
 export default function Header() {
-  const [activeButton, setActiveButton] = useState<string>("folders")
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
+  const [activeButton, setActiveButton] = useState<string>("folders");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
-  }
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
     <header className={styles.header}>
@@ -31,7 +32,7 @@ export default function Header() {
             gap: "8px",
           }}
         >
-          <HiMiniBars3BottomLeft size={10} className={styles.icon} />
+          <BsFilterLeft size={10} className={styles.icon} />
           <h1 className={styles.logo}>MyPads</h1>
         </Link>
       </div>
@@ -42,13 +43,19 @@ export default function Header() {
       </div>
 
       {/* Navigation for desktop and mobile */}
-      <div className={`${styles.navContainer} ${mobileMenuOpen ? styles.mobileMenuOpen : ""}`}>
+      <div
+        className={`${styles.navContainer} ${
+          mobileMenuOpen ? styles.mobileMenuOpen : ""
+        }`}
+      >
         <div className={styles.wrapButton}>
           <button
-            className={`${styles.button} ${activeButton === "folders" ? styles.active : ""}`}
+            className={`${styles.button} ${
+              activeButton === "folders" ? styles.active : ""
+            }`}
             onClick={() => {
-              setActiveButton("folders")
-              setMobileMenuOpen(false)
+              setActiveButton("folders");
+              setMobileMenuOpen(false);
             }}
           >
             <Link
@@ -67,10 +74,12 @@ export default function Header() {
           </button>
 
           <button
-            className={`${styles.button} ${activeButton === "bookmarks" ? styles.active : ""}`}
+            className={`${styles.button} ${
+              activeButton === "bookmarks" ? styles.active : ""
+            }`}
             onClick={() => {
-              setActiveButton("bookmarks")
-              setMobileMenuOpen(false)
+              setActiveButton("bookmarks");
+              setMobileMenuOpen(false);
             }}
           >
             <Link
@@ -94,6 +103,9 @@ export default function Header() {
           <div className={styles.searchContainer}>
             <BiSolidSearch className={styles.searchIcon} />
             <input type="text" placeholder="Поиск" className={styles.search} />
+            <button style={{border:"none",justifyContent:"center",alignItems:"center",background:"transparent",cursor:"pointer"}}>
+              <VscSettings />
+            </button>
           </div>
           <button className={styles.logout}>
             <IoPowerOutline size={20} />
@@ -101,6 +113,5 @@ export default function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }
-

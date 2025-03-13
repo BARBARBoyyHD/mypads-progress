@@ -6,7 +6,7 @@
 }
 
 .form {
-  background: #FAFAFA;
+  background: #fafafa;
   padding: 15px;
   border-radius: 10px;
   max-width: 700px;
@@ -35,16 +35,6 @@
   font-size: 14px;
 }
 
-.checkboxContainer {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.checkboxLabel {
-  margin-left: 5px;
-  font-size: 14px;
-}
 
 .tagContainer {
   display: flex;
@@ -81,7 +71,21 @@
   cursor: pointer;
   font-size: 14px;
 }
+.wrapCheckBox{
+  display: flex;
+}
 
 .addButton:hover {
   background: #0056b3;
+}
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px; /* Adjust spacing */
 }

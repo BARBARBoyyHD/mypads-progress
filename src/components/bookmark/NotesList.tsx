@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../../styles/NotesList.module.css";
 import { FaCog, FaStar, FaTrash, FaEllipsisH } from "react-icons/fa";
+import Vector from "../../assets/Vector.png"
 
 // Define interface for a single note
 interface Note {
@@ -43,7 +44,7 @@ const NotesList: React.FC<NotesListProps> = ({ notes }) => {
         notes.map((note, index) => (
           <div key={note.id} className={styles.noteCard}>
             <div className={styles.noteHeader}>
-              <span className={styles.noteIcon}>📘</span>
+              <span className={styles.noteIcon}><img src={Vector} alt="Delete vector" className={styles.vectorIcon} /></span>
               <div className={styles.dropdownContainer}>
                 <button
                   onClick={() => toggleDropdown(index)}
