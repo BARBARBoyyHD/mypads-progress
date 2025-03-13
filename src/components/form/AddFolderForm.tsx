@@ -31,7 +31,7 @@ const AddFolderForm: React.FC = () => {
           <span>Мои папки / </span>
         </Link>
 
-        <strong>Добавить новую папку</strong>
+        <strong style={{color:"#3F4246"}}>Добавить новую папку</strong>
       </nav>
 
       <div className={styles.formContainer}>

@@ -19,8 +19,6 @@ interface Note {
   tags: string[];
 }
 
-
-
 const BookMarksPages: React.FC = () => {
   const folders: Folder[] = [
     {
@@ -45,14 +43,20 @@ const BookMarksPages: React.FC = () => {
     { id: 1, title: "Заметка", tags: ["Теги", "Теги", "Теги"] },
     { id: 2, title: "Заметка 2", tags: ["Теги", "Теги", "Теги"] },
   ];
-  
 
   return (
     <main>
       <Header />
       <section>
         <h2>Папки</h2>
-        <div style={{ display: "flex", gap: "10px" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            flexWrap: "wrap",
+            padding:"20px"
+          }}
+        >
           {folders.map((folder) => (
             <BookmarkCard key={folder.id} {...folder} />
           ))}

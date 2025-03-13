@@ -53,7 +53,11 @@ const BookmarkCard: React.FC<Bookmark> = ({
           <div className={styles.dropdownMenu} ref={dropdownRef}>
             <ul>
               <li>
-                <Link to={`/folder/settings/${id}`} style={{textDecoration:"none",color:"inherit"}} className={styles.menuItem}>
+                <Link
+                  to={`/folder/settings/${id}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  className={styles.menuItem}
+                >
                   <IoSettings /> Настройки
                 </Link>
               </li>

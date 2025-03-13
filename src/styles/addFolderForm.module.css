@@ -1,5 +1,4 @@
 .container {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +17,8 @@
   background: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 100%; /* ✅ Ensures it doesn't exceed the screen width */
 }
 
 .formContainer h3 {
@@ -34,14 +33,13 @@ label {
 input,
 select {
   width: 100%;
-  padding: 10px; /* ✅ Consistent padding */
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px; /* ✅ Readability improvement */
-  box-sizing: border-box; /* ✅ Prevents overflow */
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-/* ✅ Improved Input Styling for Tags */
 .tagsInput {
   position: relative;
   width: 100%;
@@ -52,21 +50,20 @@ select {
 .tagsInput input {
   width: 100%;
   padding: 10px;
-  padding-right: 50px; /* ✅ Leaves space for "Ok" button */
+  padding-right: 50px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px; /* ✅ Readability */
-  box-sizing: border-box; /* ✅ Prevents overflow */
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-/* ✅ "Ok" button inside the input field */
 .okButton {
   position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  color: #3F4246;
+  color: #3f4246;
   padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
@@ -103,13 +100,13 @@ select {
   padding: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: center; /* ✅ Ensures center alignment */
-  align-items: center; /* ✅ Centers everything vertically */
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   margin-top: 15px;
   gap: 10px;
   cursor: pointer;
-  border: none; /* Optional: Removes default button border */
+  border: none;
 }
 
 .icon {
@@ -122,5 +119,30 @@ select {
   align-items: center;
   background: #f9f9f9;
   color: #0057f8;
-  margin-bottom: 0; /* ✅ Fixes misalignment */
+  margin-bottom: 0;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .formContainer {
+    width: 90%; /* ✅ Makes the form take up more space on small screens */
+    padding: 15px;
+  }
+
+  input,
+  select {
+    font-size: 14px; /* ✅ Adjust font size for better readability */
+    padding: 8px;
+  }
+
+  .addButton {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
 }

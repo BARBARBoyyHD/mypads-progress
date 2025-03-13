@@ -5,6 +5,7 @@
   align-items: center;
   padding: 10px 20px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .logo {
@@ -12,15 +13,29 @@
   font-weight: bold;
 }
 
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
 .nav {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
+
 .wrapButton {
   display: flex;
   justify-content: center;
+  width: 100%;
+  align-items: center;
   gap: 10px;
 }
+
 .button {
   padding: 10px 15px;
   border: none;
@@ -44,13 +59,6 @@
 .active {
   background-color: #d3d3d3; /* Grey when selected */
   font-weight: bold;
-}
-
-
-.nav {
-  display: flex;
-  align-items: center; /* Align items vertically */
-  gap: 10px; /* Adjust spacing between search bar and logout button */
 }
 
 .searchContainer {
@@ -99,4 +107,83 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navContainer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+    margin-left: 0;
+  }
+
+  .mobileMenuOpen {
+    right: 0;
+  }
+
+  .wrapButton {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 15px;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .searchContainer {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .logout {
+    align-self: flex-start;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
 }
