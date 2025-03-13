@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../../styles/FolderList.module.css";
 import folders from "../data/FolderData"; // ✅ Import folder data
 import FolderCard from "./FolderCard";

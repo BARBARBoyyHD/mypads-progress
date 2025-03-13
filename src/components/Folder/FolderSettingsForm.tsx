@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "../../styles/FolderSettings.module.css";
 import { useNavigate } from "react-router-dom";
+import styles from "../../styles/FolderSettings.module.css";
 
 // Define folder type
 interface Folder {
@@ -23,7 +23,7 @@ const FolderSettingsForm: React.FC<FolderSettingsFormProps> = ({ folder }) => {
     folder.visibility
   );
   // const [password, setPassword] = useState(""); // Empty string instead of '********'
-  const [readOnly, setReadOnly] = useState(false);
+  // const [readOnly, setReadOnly] = useState(false);
   const [tags, setTags] = useState<string[]>(folder.tags || []);
 
   const navigate = useNavigate();
