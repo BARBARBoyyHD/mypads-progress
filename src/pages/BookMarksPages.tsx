@@ -2,6 +2,7 @@ import React from "react";
 import BookmarkCard from "../components/bookmark/BookmarkCard";
 import NotesList from "../components/bookmark/NotesList"; // Import NotesList
 import Header from "../components/header/Header";
+import styles from "../styles/BookMarkPages.module.css";
 
 // Define types for folder and note
 interface Folder {
@@ -47,14 +48,14 @@ const BookMarksPages: React.FC = () => {
   return (
     <main>
       <Header />
-      <section>
+      <section className={styles.bookMarkSection}>
         <h2>Папки</h2>
         <div
           style={{
             display: "flex",
             gap: "10px",
             flexWrap: "wrap",
-            padding:"20px"
+            padding: "20px",
           }}
         >
           {folders.map((folder) => (
@@ -63,7 +64,7 @@ const BookMarksPages: React.FC = () => {
         </div>
       </section>
 
-      <section>
+      <section className={styles.notesSection}>
         <h2>Заметки</h2>
         <NotesList notes={notes} /> {/* No need for `tags={[]}` */}
       </section>
