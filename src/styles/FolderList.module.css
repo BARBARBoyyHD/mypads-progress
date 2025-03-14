@@ -1,8 +1,20 @@
 .folderList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+  justify-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .folderList {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
+    align-items: center;
+    margin-top: 10px;
+    justify-items: center;
+    gap: 14px;
+    padding: 35px;
   }
-  
+}

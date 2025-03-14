@@ -138,14 +138,15 @@
 /* Admin button */
 .adminButton {
   margin-top: 10px;
-  width: auto;
-  padding: 5px;
-  background: #F5F6F6;
-  border: 1px solid black;
+  width: 250px;
+  padding: 3px;
+  background: white;
+  border: 1px solid #3F4246;
   border-radius: 10px;
   cursor: pointer;
   font-size: 14px;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 5px;
 }
@@ -158,6 +159,7 @@
 .configurations {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin-top: 20px;
   background: white;
   padding: 10px;
@@ -287,6 +289,17 @@
 
 .dropdownItem:hover {
   background: #f5f5f5;
+}
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tags p{
+  font-size: 12px;
+  padding: 4px 8px 4px 8px;
+  border-radius: 5px;
+  background-color: #F5F6F6;
+  border: 1px solid #DBDBDB;
 }
 
 /* Responsive Styles */

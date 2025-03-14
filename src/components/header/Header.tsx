@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { BiSolidSearch } from "react-icons/bi";
 import { BsFilterLeft } from "react-icons/bs";
-import { FaFolderMinus, FaStar } from "react-icons/fa6";
 import { IoPowerOutline } from "react-icons/io5";
 import { RiCloseLine, RiMenu3Line } from "react-icons/ri";
-import { VscSettings } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import search from "../../assets/Search 1.svg";
+import bookmark from "../../assets/bookmark.svg";
+import filter from "../../assets/filter.svg";
+import folder from "../../assets/folder.svg";
 import styles from "../../styles/header.module.css";
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
   };
 
   const handleLogoVisible = () => {
-    setLogoVisible(window.innerWidth < 768);
+    setLogoVisible(window.innerWidth < 720);
   };
 
   useEffect(() => {
@@ -97,7 +98,7 @@ export default function Header() {
                 gap: "5px",
               }}
             >
-              <FaFolderMinus size={20} />
+              <img src={folder} />
               Мои папки и заметки
             </Link>
           </button>
@@ -121,14 +122,14 @@ export default function Header() {
                 gap: "5px",
               }}
             >
-              <FaStar size={20} />
+              <img src={bookmark}  />
               Мои закладки
             </Link>
           </button>
         </div>
         <nav className={styles.nav}>
           <div className={styles.searchContainer}>
-            <BiSolidSearch className={styles.searchIcon} />
+            <img src={search} className={styles.searchIcon} />
             <input type="text" placeholder="Поиск" className={styles.search} />
             <button
               style={{
@@ -139,7 +140,7 @@ export default function Header() {
                 cursor: "pointer",
               }}
             >
-              <VscSettings />
+              <img src={filter} />
             </button>
           </div>
           <button className={styles.logout}>

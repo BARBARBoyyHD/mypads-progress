@@ -17,8 +17,17 @@ const MigrateNotesPage: React.FC = () => {
   return (
     <main>
       <Header />
-      <section >
-        <MigrateNotesForm folders={folders} notes={notes} onSubmit={handleMigrate} />
+      <section>
+        <h1 style={{color:"#3F42464D"}}>
+          Мои папки/ Папка /<span style={{color:"#3F4246"}}> Миграция заметок из папки</span>
+        </h1>
+      </section>
+      <section>
+        <MigrateNotesForm
+          folders={folders}
+          notes={notes}
+          onSubmit={handleMigrate}
+        />
       </section>
     </main>
   );

@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../../styles/FolderCard.module.css";
 import { FiMoreHorizontal, FiPlus } from "react-icons/fi";
-import {  FaShareAlt, FaUserShield, FaStar, FaTrash } from "react-icons/fa";
+import { FaShareAlt, FaUserShield, FaStar, FaTrash } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
+import MenuKebab from "../../assets/MenuKebab.svg"
 
 // Define an interface for FolderCard props
 interface FolderCardProps {
@@ -14,7 +15,13 @@ interface FolderCardProps {
   visibility: string;
 }
 
-const FolderCard: React.FC<FolderCardProps> = ({ id, title, notesCount, tags, visibility }) => {
+const FolderCard: React.FC<FolderCardProps> = ({
+  id,
+  title,
+  notesCount,
+  tags,
+  visibility,
+}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -28,7 +35,10 @@ const FolderCard: React.FC<FolderCardProps> = ({ id, title, notesCount, tags, vi
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     }
@@ -44,17 +54,25 @@ const FolderCard: React.FC<FolderCardProps> = ({ id, title, notesCount, tags, vi
   };
 
   return (
-    <div className={styles.folderCard} style={{ cursor: "pointer" }} onClick={handleFolderClick}>
+    <div
+      className={styles.folderCard}
+      style={{ cursor: "pointer" }}
+      onClick={handleFolderClick}
+    >
       <div className={styles.folderTab}>
         <button className={styles.moreButton} onClick={toggleDropdown}>
-          <FiMoreHorizontal style={{ color: "white" }} />
+          <img src={MenuKebab} style={{ color: "white" , display:"flex",justifyContent:"center",alignItems:"center"}} />
         </button>
 
         {dropdownOpen && (
           <div className={styles.dropdownMenu} ref={dropdownRef}>
             <ul>
               <li>
-                <Link to={`/folder/settings/${id}`} style={{ color: "inherit", textDecoration: "none" }} onClick={(e) => e.stopPropagation()}>
+                <Link
+                  to={`/folder/settings/${id}`}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <IoSettings /> Настройки
                 </Link>
               </li>
@@ -77,27 +95,30 @@ const FolderCard: React.FC<FolderCardProps> = ({ id, title, notesCount, tags, vi
           </div>
         )}
       </div>
-
-      <span className={`${styles.visibilityTag} ${styles[visibility]}`}>{visibility}</span>
-
-      <div className={styles.content}>
+      <div className={styles.wrapNav}>
+        <p className={`${styles.visibilityTag} ${styles[visibility]}`}>
+          {visibility}
+        </p>
         <h3 className={styles.folderTitle}>{title}</h3>
         <div className={styles.notesSection}>
           <p>
-            Заметки: <strong>{notesCount}</strong>
+            Заметки: <strong style={{color:"#3F4246"}}>{notesCount}</strong>
           </p>
-          <button className={styles.addNoteButton} onClick={(e) => e.stopPropagation()}>
+          <button
+            className={styles.addNoteButton}
+            onClick={(e) => e.stopPropagation()}
+          >
             <FiPlus className={styles.plusIcon} />
           </button>
         </div>
-      </div>
 
-      <div className={styles.tags}>
-        {tags.map((tag, index) => (
-          <span key={index} className={styles.tag}>
-            {tag}
-          </span>
-        ))}
+        <div className={styles.tags}>
+          {tags.map((tag, index) => (
+            <span key={index} className={styles.tag}>
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className={styles.emptyContent}></div>

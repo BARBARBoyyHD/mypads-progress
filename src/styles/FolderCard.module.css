@@ -2,8 +2,8 @@
 .folderCard {
   padding: 20px;
   border-radius: 15px;
-  width: 240px;
-  height: 250px;
+  width: 260px;
+  height: 260px;
   background: url("../assets/Union.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -12,10 +12,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-   transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
-.folderCard:hover{
+.folderCard:hover {
   transform: translateY(-5px);
 }
 
@@ -67,7 +67,6 @@
   background: #f1f1f1;
   border-radius: 50%;
   background-color: #333;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,63 +83,76 @@
 
 /* Visibility Tag */
 .visibilityTag {
-  position: absolute;
-  top: 50px;
-  left: 12px;
   font-size: 12px;
   font-weight: bold;
-  padding: 5px 8px;
   border-radius: 5px;
+  width: 100px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: block;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 4px;
 }
 
 /* Visibility Colors */
 .ограниченный {
-  background: #c2e5c2;
-  border: 1px solid #0b7200;
-  color: #0b7200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf9ce;
+  border: 1px solid #d7fb94;
+  color: #000000;
 }
 
 .публичный {
-  background: #c7e0e9;
-  border: 1px solid #0057f8;
-  color: #0057f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dee7ff;
+  border: 1px solid #8bacff;
+  color: #000000;
 }
 
 .приватный {
-  background: #fcd5d5;
-  color: #a30000;
-  border: 1px solid #a30000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffe8de;
+  color: #000000;
+  border: 1px solid #ffc38b;
 }
 
 /* Folder Title */
 .folderTitle {
-  margin-top: 70px;
+  display: block;
   font-size: 18px;
+  float: inline-end;
   font-weight: bold;
-  color: #333;
+  margin-bottom: 0px;
+  color: #3f4246;
 }
 
 /* Notes Section */
 .notesSection {
   display: flex;
-  align-items: center;
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 5px;
-  margin-top: 10px;
+  margin-top: 0px;
+  font-size: 12px; /* Reduce font size if necessary */
+  gap: 2px; /* Reduce spacing between items */
 }
 
 .notesSection p {
+  color: #a0a0a0;
   font-size: 14px;
-  color: #777;
+  margin-top: 3px;
 }
 
 /* Add Note Button */
 .addNoteButton {
+  margin-top: 0px;
   border: none;
   cursor: pointer;
   background: none;
-  padding: 5px;
   border-radius: 5px;
 }
 
@@ -149,7 +161,12 @@
   color: white;
   background: #3f4246;
   border-radius: 50%;
-  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  color: #ffffff;
+  margin-bottom: 10px;
   font-size: 14px;
 }
 
@@ -158,15 +175,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 .tag {
-  background: #eee;
+  background: #dbdbdb;
   font-size: 12px;
-  padding: 5px 8px;
+  padding: 4px 8px 4px 8px;
   border-radius: 4px;
-  color: #555;
+  color: #000000;
 }
 
 /* Empty Content Area */
@@ -174,5 +191,28 @@
   background: #fff;
   height: 130px;
   border-radius: 5px;
-  margin-top: 10px;
+}
+.wrapNav {
+  margin-top: 30px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1114px) {
+  .folderTab {
+    left: 240px;
+  }
+}
+
+@media (max-width: 500px) {
+  .folderTab {
+    left: 190px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .folderTab {
+    left: 250px;
+  }
 }

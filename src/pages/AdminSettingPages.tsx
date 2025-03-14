@@ -8,7 +8,7 @@ const AdminSettingPages = () => {
       <section>
         <h2 className={styles.breadcrumbs}>
           Мои папки / <span className={styles.folderName}>Папка 1 /</span>{" "}
-          <span style={{ color: "black" }}>Совместное администрирование</span>
+          <span style={{ color: "black" ,fontWeight:"bold"}}>Совместное администрирование</span>
         </h2>
       </section>
       <section>

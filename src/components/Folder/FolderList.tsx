@@ -3,8 +3,6 @@ import styles from "../../styles/FolderList.module.css";
 import folders from "../data/FolderData"; // ✅ Import folder data
 import FolderCard from "./FolderCard";
 
-
-
 const FolderList: React.FC = () => {
   // Handle folder click
 
@@ -13,7 +11,7 @@ const FolderList: React.FC = () => {
       {folders.map((folder) => (
         <FolderCard
           key={folder.id}
-          {...folder} 
+          {...folder}
           // Pass folder properties as props
         />
       ))}

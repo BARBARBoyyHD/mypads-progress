@@ -4,7 +4,6 @@ const SingleFolderPages = () => {
   return (
     <main>
       <Header />
-      <h1>Мои папки</h1>
       <FolderSingle />
     </main>
   );

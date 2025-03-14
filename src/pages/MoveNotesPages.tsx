@@ -7,7 +7,7 @@ const MoveNotesPages = () => {
       <Header />
       <section>
         <h2 className={styles.breadcrumbs}>
-          Мои папки / <span className={styles.folderName}>Папка 1 /</span> <span style={{color:"black"}}>Редактировать заметку</span> 
+          Мои папки / <span className={styles.folderName}>Папка 1 /</span> <span style={{color:"black"}}>Миграция заметок из папки</span> 
         </h2>
       </section>
       <section
