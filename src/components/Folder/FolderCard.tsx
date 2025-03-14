@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import styles from "../../styles/FolderCard.module.css";
-import { FiMoreHorizontal, FiPlus } from "react-icons/fi";
-import { FaShareAlt, FaUserShield, FaStar, FaTrash } from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { FaShareAlt, FaStar, FaTrash, FaUserShield } from "react-icons/fa";
+import { FiPlus } from "react-icons/fi";
 import { IoSettings } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
-import MenuKebab from "../../assets/MenuKebab.svg"
+import MenuKebab from "../../assets/MenuKebab.svg";
+import styles from "../../styles/FolderCard.module.css";
 
 // Define an interface for FolderCard props
 interface FolderCardProps {
